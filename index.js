@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/jokes', async (req, res) => {
+  console.log(`DATABASE URL: ${process.env.DATABASE_URL}`);
   const { rows } = await pool.query("SELECT * FROM jokes")
 
   res.json(rows)
@@ -18,4 +19,5 @@ app.get('/jokes', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
+    console.log(`db connection string ${pool.connectionString}`)
 });
