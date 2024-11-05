@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/jokes', async (req, res) => {
-  console.log(`DATABASE URL: ${process.env.DATABASE_URL}`);
+  console.log(`DATABASE URL: ${process.env.Postgres.DATABASE_URL}`);
   const { rows } = await pool.query("SELECT * FROM jokes")
 
   res.json(rows)
