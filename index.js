@@ -9,6 +9,14 @@ app.get('/', (req, res) => {
     return res.send('Hello World from Railway using a Db!');
 });
 
+
+
+const { Client } = pg
+const client = new Client()
+await client.connect()
+
+//const db_url = ${{ Postgres.DATABASE_URL }}
+
 const pool = new pg.Pool();
 
 app.get('/jokes', async (req, res) => {
