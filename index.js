@@ -9,15 +9,17 @@ app.get('/', (req, res) => {
     return res.send('Hello World from Railway using a Db!');
 });
 
-
 app.get('/jokes', async (req, res) => {
-  console.log(`DATABASE URL: ${process.env.Postgres.DATABASE_URL}`);
   const { rows } = await pool.query("SELECT * FROM jokes")
 
   res.json(rows)
 })
 
+app.get("/posts", async (req, res) => {
+  const posts = await pool.query("SELECT * FROM posts;");
+  res.send({ posts });
+});
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
-    console.log(`db connection string ${pool.connectionString}`)
 });
