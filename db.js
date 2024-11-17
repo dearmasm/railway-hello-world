@@ -4,7 +4,7 @@ const { Pool } = require("pg");
 
 // The secret connection string you copied earlier
 const connectionString =
-  "postgresql://postgres"
+  process.env.DATABASE_URL;
 
 // The secret connection string you copied earlier
 //const connectionString = process.env.Postgres.DATABASE_URL;
@@ -14,3 +14,4 @@ const pool = new Pool({
 });
 
 module.exports = pool;
+
