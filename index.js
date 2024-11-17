@@ -5,8 +5,11 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+var counter=0;
+
 app.get('/', (req, res) => {
-    return res.send('Hello World from Railway using a Db!');
+    counter++;
+    return res.send('Hello World from Railway using a Db!\nCounter = ', counter);
 });
 
 app.get('/jokes', async (req, res) => {
