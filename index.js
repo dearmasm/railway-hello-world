@@ -9,7 +9,7 @@ var counter=0;
 
 app.get('/', (req, res) => {
     counter++;
-    return res.send('Hello World from Railway using a Db!\nCounter = ', counter);
+    return res.send('Hello World from Railway using a Db!');
 });
 
 app.get('/jokes', async (req, res) => {
