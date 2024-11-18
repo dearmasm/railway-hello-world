@@ -8,8 +8,22 @@ const port = process.env.PORT || 3000;
 var counter=0;
 
 app.get('/', (req, res) => {
-    counter++;
-    return res.send('Hello World from Railway using a Db!');
+  counter++;
+
+  // Create an HTML response with the counter value
+  const htmlResponse = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Hello World from Railway using a Db!</title>
+    </head>
+    <body>
+      <h1>Counter: ${counter}</h1>
+    </body>
+    </html>
+  `; 
+
+    return res.send(htmlResponse);
 });
 
 app.get('/jokes', async (req, res) => {
