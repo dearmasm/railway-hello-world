@@ -29,7 +29,6 @@ app.get('/', (req, res) => {
 
 app.get('/jokes', async (req, res) => {
   const { rows } = await pool.query("SELECT * FROM jokes")
-
   res.json(rows)
 })
 
