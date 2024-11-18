@@ -10,8 +10,13 @@ const connectionString =
 //const connectionString = process.env.Postgres.DATABASE_URL;
 
 const pool = new Pool({
-  connectionString,
+  connectionString : process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },  
 });
+
+pool.connect();
 
 module.exports = pool;
 
