@@ -2,7 +2,6 @@
 const express = require('express');
 const pool = require("./db");
 const app = express();
-const json2html = require('node-json2html');
 
 const port = process.env.PORT || 3000;
 
