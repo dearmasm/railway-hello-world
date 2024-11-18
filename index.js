@@ -15,9 +15,10 @@ app.get('/', (req, res) => {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Hello World from Railway using a Db!</title>
+      <title>Hello World from Railway!</title>
     </head>
     <body>
+      <h1>Hello World from Railway!</h1>
       <h1>Counter: ${counter}</h1>
     </body>
     </html>
